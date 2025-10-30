@@ -1,0 +1,93 @@
+import zipfile
+
+with zipfile.ZipFile("my-website.zip", "w", zipfile.ZIP_DEFLATED) as zip_file:
+    # index.html
+    zip_file.writestr("index.html", """<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Awesome Website</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Website!</h1>
+    <p>Your awesome tagline goes here 😎</p>
+  </header>
+  <main>
+    <section class="intro">
+      <h2>About Me</h2>
+      <p>Hi! I'm [Your Name], and this is my first website hosted for free on GitHub Pages.</p>
+    </section>
+    <section class="projects">
+      <h2>My Projects</h2>
+      <ul>
+        <li>🌐 Project One</li>
+        <li>💡 Project Two</li>
+        <li>🚀 Project Three</li>
+      </ul>
+    </section>
+    <section class="contact">
+      <h2>Contact</h2>
+      <p>Email me at <a href="mailto:you@example.com">you@example.com</a></p>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 Your Name — Built with ❤️ using GitHub Pages</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>""")
+
+    # style.css
+    zip_file.writestr("style.css", """* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+}
+header {
+  background: #0078d7;
+  color: white;
+  text-align: center;
+  padding: 2em 1em;
+}
+header h1 {
+  font-size: 2em;
+}
+header p {
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+main {
+  padding: 2em;
+  max-width: 800px;
+  margin: auto;
+}
+section {
+  margin-bottom: 2em;
+}
+h2 {
+  color: #0078d7;
+  margin-bottom: 0.5em;
+}
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+  margin-top: 2em;
+}""")
+
+    # script.js
+    zip_file.writestr("script.js", """document.addEventListener("DOMContentLoaded", () => {
+  console.log("✅ Website loaded successfully!");
+});""")
+
+print("✅ Created my-website.zip successfully!")
